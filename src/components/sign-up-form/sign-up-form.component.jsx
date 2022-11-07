@@ -11,7 +11,7 @@ import Button from "../button/button.component";
 // import { UserContext } from "../../context/user.context";
 
 //styles
-import './sign-up-form.styles.scss'
+import { SignUpContainer } from './sign-up-form.styles.jsx'
 
 const defaultFormFields = {
     displayName: '',
@@ -60,7 +60,7 @@ const SignUpForm = () => {
     }
 
     return(
-        <div className="sign-up-container">
+        <SignUpContainer>
         <h2>Don't have an account?</h2>
         <span>Sign up with your email and password</span>
         <form onSubmit={handleSubmit}>
@@ -106,7 +106,7 @@ const SignUpForm = () => {
                 Sign up
             </Button>
         </form>
-        </div>
+        </SignUpContainer>
     )
 }
 
