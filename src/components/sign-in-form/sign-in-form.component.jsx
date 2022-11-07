@@ -8,7 +8,7 @@ import {
  
 //components
 import FormInput from '../form-input/form-input.component';
-import Button from '../button/button.component';
+import Button, {BUTTON_TYPE_CLASS} from '../button/button.component';
 
 //context 
 // import { UserContext } from '../../context/user.context';
@@ -94,7 +94,7 @@ const SignInForm = () => {
                     <Button type="submit">
                         Sign In
                     </Button>
-                    <Button buttonType="google" type="button" onClick={logGooglePopupUser}>
+                    <Button buttonType={BUTTON_TYPE_CLASS.google} type="button" onClick={logGooglePopupUser}>
                         Google Sign-In
                     </Button> 
                 </div>
