@@ -1,4 +1,4 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 
 import { ReactComponent as Crown} from '../../assets/crown.svg';
@@ -28,11 +28,7 @@ const Navigation = () => {
     // const { currentUser, setCurrentUser } = useContext(UserContext);
     const { currentUser } = useContext(UserContext);
     const { isCartOpen } = useContext(CartContext);
-
-    // const signOutHandler = async () => {
-    //     const res = await signOutUser();
-    //     setCurrentUser(null);
-    // }
+    const redirect = useNavigate();
     
     return(
         <>
@@ -46,9 +42,12 @@ const Navigation = () => {
                     </NavLink>
                     {
                         currentUser ? (
+                            
                             <NavLink as='span' onClick={signOutUser}>
+                            
                                 SIGN OUT
                             </NavLink>
+                            
                         ) : (
                         <NavLink to='/auth'>
                             SIGN-IN
