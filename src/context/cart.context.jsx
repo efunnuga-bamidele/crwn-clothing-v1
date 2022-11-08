@@ -1,5 +1,7 @@
 import { createContext, useReducer } from "react";
 
+import { createAction } from "../utils/reducer/reducer.utils";
+
 
 export const addCartItem = (cartItems, productToAdd) => {
    // find if cartItems contains productToAdd
@@ -60,7 +62,7 @@ export const CartContext = createContext({
     removeItemFromCart: () => {},
     removeItem: () => {},
     cartCount: 0,
-    cartTotal: 0
+    cartTotal: 0,
 
 });
 
@@ -110,18 +112,27 @@ export const CartProvider = ({children}) => {
             return (total + (cartItem.quantity * cartItem.price))
         }, 0);
 
-        dispatch({ type: CART_ACTION_TYPES.SET_CART_ITEMS , payload: { cartItems: newCartItems, cartTotal: newCartTotal, cartCount: newCartCount }})
+        dispatch(
+            createAction(
+                CART_ACTION_TYPES.SET_CART_ITEMS, 
+            { 
+                cartItems: newCartItems, 
+                cartTotal: newCartTotal, 
+                cartCount: newCartCount 
+            })
+        );
 
-        }
+        };
 
     const setIsCartOpen = (newIsCartOpen) => {
-        dispatch({ type: CART_ACTION_TYPES.SET_IS_CART_OPEN, payload:newIsCartOpen })
+        dispatch(createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, newIsCartOpen ))
     }
 
     //Other functions 
     const addItemToCart = (productToAdd) => {
         const newCartItems = addCartItem(cartItems, productToAdd);
         updateCartItemsReducer(newCartItems);
+        console.log(cartCount)
     }
     const removeItemFromCart = (cartItemToRemove) => {
         const newCartItems = removeCartItem(cartItems, cartItemToRemove);
