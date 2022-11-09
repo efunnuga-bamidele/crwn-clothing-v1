@@ -97,8 +97,6 @@ const INITIAL_STATE = {
 }
 
 export const CartProvider = ({children}) => {
-
-    
     const [ { cartItems, cartCount, cartTotal, isCartOpen }, dispatch] = useReducer(cartReducer, INITIAL_STATE);
 
     //dispatch functions      
