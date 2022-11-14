@@ -9,7 +9,7 @@ import CategoriesPreview from "../categories-preview/categories-preview.componen
 import Category from "../category/category.component";
 
 import { getCategoriesAndDocuments } from "../../utils/firebase/firebase.utils.js";
-import { setCategoriesMap } from '../../store/category/category.action';
+import { setCategories } from '../../store/category/category.action';
 
 const Shop = () => {
 
@@ -18,12 +18,11 @@ const Shop = () => {
         
     //use effect for category map 
     useEffect(() => {
-        const getCategoryMap = async () => {
-            const categoryMap = await getCategoriesAndDocuments('categories');
-            
-            dispatch(setCategoriesMap(categoryMap))
+        const getCategoriesMap = async () => {
+            const categoriesArray = await getCategoriesAndDocuments('categories');
+            dispatch(setCategories(categoriesArray))
         } ;
-        getCategoryMap();
+        getCategoriesMap();
     }, [])
    
 
