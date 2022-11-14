@@ -1,8 +1,6 @@
 import { useSelector } from "react-redux";
 
-
 //context
-// import { CategoriesContext } from "../../context/categories.context";
 import { selectCategoriesMap } from "../../store/category/category.selector";
 
 //component
