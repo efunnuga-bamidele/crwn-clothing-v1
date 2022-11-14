@@ -15,18 +15,11 @@ import SignIn from './routes/authentication/authentication.component';
 import Shop from './routes/shop/shop.component';
 import CheckOut from './routes/checkout/checkout.component';
 
-//context
-// import  { UserContext } from './context/user.context';
-
 //redux imports
 import { setCurrentUser } from './store/user/user.action';
 
 
 const App = () => {
-
-  // const { currentUser } = useContext(UserContext);
-
-  //user redux reducer 
   const dispatch = useDispatch();
 
   useEffect(() => {
