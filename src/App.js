@@ -7,6 +7,7 @@ import { GlobalStyle } from './global.styles';
 //firebase
 import { onAuthStateChangedListener, createUserDocumentFromAuth } from "./utils/firebase/firebase.utils";
 
+
 //Components
 import Navigation from './routes/navigation/navigation.component';
 import Home from "./routes/home/home.component";
@@ -20,9 +21,12 @@ import CheckOut from './routes/checkout/checkout.component';
 //redux imports
 import { setCurrentUser } from './store/user/user.action';
 
+
 const App = () => {
 
   // const { currentUser } = useContext(UserContext);
+
+  //user redux reducer 
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -35,7 +39,8 @@ const App = () => {
 
      return unsubscribe
  }, [])
- 
+
+
 
   return (
     <div>

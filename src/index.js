@@ -12,7 +12,7 @@ import reportWebVitals from './reportWebVitals';
 
 //context
 // import { UserProvider } from './context/user.context';
-import { CategoriesProvider } from './context/categories.context';
+
 import { CartProvider } from './context/cart.context';
 
 ReactDOM.render(
@@ -20,11 +20,11 @@ ReactDOM.render(
     <Provider store={store}>
       <BrowserRouter>
        {/* <UserProvider> */}
-          <CategoriesProvider>
+
             <CartProvider>
                 <App />
             </CartProvider>
-          </CategoriesProvider>
+
        {/* </UserProvider> */}
       </BrowserRouter>
     </Provider>
