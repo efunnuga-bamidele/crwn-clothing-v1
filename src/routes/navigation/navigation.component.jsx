@@ -14,6 +14,10 @@ import { signOutUser } from '../../utils/firebase/firebase.utils';
 import CartIcon from '../../components/cart-icon/cart-icon.component';
 import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
 
+//redux
+import { useSelector } from 'react-redux';
+import { selectCurrentUser } from '../../store/user/user.selector'
+
 //Styles
 import { 
         NavigationContainer, 
@@ -26,7 +30,9 @@ import {
 const Navigation = () => {
 //destructuring the value from the context
     // const { currentUser, setCurrentUser } = useContext(UserContext);
-    const { currentUser } = useContext(UserContext);
+    // const { currentUser } = useContext(UserContext);
+    //pulling states from redux reducers
+    const currentUser = useSelector(selectCurrentUser);
     const { isCartOpen } = useContext(CartContext);
     const redirect = useNavigate();
     
