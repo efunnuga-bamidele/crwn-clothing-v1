@@ -10,22 +10,11 @@ import { store } from './store/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-//context
-// import { UserProvider } from './context/user.context';
-
-import { CartProvider } from './context/cart.context';
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-       {/* <UserProvider> */}
-
-            <CartProvider>
-                <App />
-            </CartProvider>
-
-       {/* </UserProvider> */}
+        <App />
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,
