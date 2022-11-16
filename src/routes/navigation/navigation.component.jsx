@@ -1,10 +1,9 @@
-import { Outlet, Link, useNavigate } from "react-router-dom";
+import { Outlet,  useNavigate } from "react-router-dom";
 import { useContext } from "react";
 
 import { ReactComponent as Crown} from '../../assets/crown.svg';
 
 //context
-import { UserContext } from "../../context/user.context";
 import { CartContext } from "../../context/cart.context";
 
 //firestore
