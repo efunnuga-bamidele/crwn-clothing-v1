@@ -8,7 +8,7 @@ export const selectCartItems = createSelector(
     (cart) => cart.cartItems
 );
 
-export const selectCartOpen = createSelector(
+export const selectIsCartOpen = createSelector(
     [selectCartReducer],
     (cart) => cart.isCartOpen
 );

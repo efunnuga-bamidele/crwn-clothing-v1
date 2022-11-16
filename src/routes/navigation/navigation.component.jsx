@@ -3,9 +3,6 @@ import { useContext } from "react";
 
 import { ReactComponent as Crown} from '../../assets/crown.svg';
 
-//context
-import { CartContext } from "../../context/cart.context";
-
 //firestore
 import { signOutUser } from '../../utils/firebase/firebase.utils';
 
@@ -16,6 +13,7 @@ import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component
 //redux
 import { useSelector } from 'react-redux';
 import { selectCurrentUser } from '../../store/user/user.selector'
+import { selectIsCartOpen } from "../../store/cart/cart.selector";
 
 //Styles
 import { 
@@ -32,7 +30,7 @@ const Navigation = () => {
     // const { currentUser } = useContext(UserContext);
     //pulling states from redux reducers
     const currentUser = useSelector(selectCurrentUser);
-    const { isCartOpen } = useContext(CartContext);
+    const isCartOpen = useSelector(selectIsCartOpen);
     const redirect = useNavigate();
     
     return(
